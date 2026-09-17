@@ -1,17 +1,22 @@
 import React from 'react';
-import { Text, ScrollView } from 'react-native';
-import Button from '../../components/Button';
+import { View, Text, ScrollView } from 'react-native';
 import styles from './styles';
 
-export default function Home({ navigation }) {
+export default function Home() {
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.title}>Home</Text>
-      <Text style={styles.subtitle}>
-        Tela inicial teste.
-      </Text>
+      <View style={styles.topo}>
+        <Text style={styles.saudacao}>Olá!</Text>
+        <Text style={styles.subtitulo}>Bem-vindo à Planengen</Text>
+      </View>
 
-      <Button title="Ir para Sobre" onPress={() => navigation.navigate('Sobre')} />
+      <View style={styles.card}>
+        <Text style={styles.cardTitulo}>Obras cadastradas</Text>
+        <Text style={styles.cardValor}>0</Text>
+        <Text style={styles.cardDescricao}>
+          Nenhuma obra cadastrada ainda. Essa tela vai mostrar o resumo das obras em andamento.
+        </Text>
+      </View>
     </ScrollView>
   );
 }

@@ -2,8 +2,8 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+import Login from '../screens/Login';
 import Home from '../screens/Home';
-import Sobre from '../screens/Sobre';
 
 const Stack = createNativeStackNavigator();
 
@@ -13,11 +13,11 @@ export default function Routes() {
       <Stack.Navigator
         screenOptions={{
           headerShown: false,
-          animation: 'slide_from_bottom', // transicao vertical
+          animation: 'slide_from_bottom', // transicao vertical, conforme o enunciado
         }}
       >
+        <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Sobre" component={Sobre} />
       </Stack.Navigator>
     </NavigationContainer>
   );
